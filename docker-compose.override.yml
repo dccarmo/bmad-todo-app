@@ -1,0 +1,24 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: apps/backend/Dockerfile
+      target: builder
+    volumes:
+      - ./apps/backend/src:/app/apps/backend/src
+      - ./packages/shared/src:/app/packages/shared/src
+    working_dir: /app
+    command: sh -c "node_modules/.bin/drizzle-kit migrate --config apps/backend/drizzle.config.ts && npm run dev --workspace=apps/backend"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: apps/frontend/Dockerfile
+      target: builder
+    volumes:
+      - ./apps/frontend/src:/app/apps/frontend/src
+      - ./apps/frontend/index.html:/app/apps/frontend/index.html
+    ports:
+      - '5173:5173'
+    working_dir: /app
+    command: sh -c "npm run dev --workspace=apps/frontend -- --host 0.0.0.0"
