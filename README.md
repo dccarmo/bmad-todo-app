@@ -167,6 +167,7 @@ curl http://localhost:3000/health
 ## QA Reports
 
 - [Security Review](docs/security-review.md) — OWASP Top 10 analysis, no critical findings
+- [QA Coverage Report](docs/qa-coverage-report.md) — Test coverage breakdown, thresholds, and known gaps
 - [AI Integration Log](docs/ai-integration-log.md) — How AI was used throughout development
 
 ---

@@ -12,6 +12,7 @@ All spec artifacts produced during development are checked into the repository u
 
 | Artifact | Path |
 |----------|------|
+| Project Brief | [`_bmad-output/planning-artifacts/project-brief.md`](../_bmad-output/planning-artifacts/project-brief.md) |
 | Product Requirements Document (PRD) | [`_bmad-output/planning-artifacts/prd.md`](../_bmad-output/planning-artifacts/prd.md) |
 | Architecture Document | [`_bmad-output/planning-artifacts/architecture.md`](../_bmad-output/planning-artifacts/architecture.md) |
 | Epics & Stories | [`_bmad-output/planning-artifacts/epics.md`](../_bmad-output/planning-artifacts/epics.md) |
