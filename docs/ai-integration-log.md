@@ -6,6 +6,22 @@
 
 ---
 
+## BMAD Artifacts
+
+All spec artifacts produced during development are checked into the repository under [`_bmad-output/`](../_bmad-output/):
+
+| Artifact | Path |
+|----------|------|
+| Product Requirements Document (PRD) | [`_bmad-output/planning-artifacts/prd.md`](../_bmad-output/planning-artifacts/prd.md) |
+| Architecture Document | [`_bmad-output/planning-artifacts/architecture.md`](../_bmad-output/planning-artifacts/architecture.md) |
+| Epics & Stories | [`_bmad-output/planning-artifacts/epics.md`](../_bmad-output/planning-artifacts/epics.md) |
+| Implementation Readiness Report | [`_bmad-output/planning-artifacts/implementation-readiness-report-2026-04-26.md`](../_bmad-output/planning-artifacts/implementation-readiness-report-2026-04-26.md) |
+| Sprint Status | [`_bmad-output/implementation-artifacts/sprint-status.yaml`](../_bmad-output/implementation-artifacts/sprint-status.yaml) |
+| Story Files (18 stories) | [`_bmad-output/implementation-artifacts/`](../_bmad-output/implementation-artifacts/) |
+| Test Artifacts | [`_bmad-output/test-artifacts/`](../_bmad-output/test-artifacts/) |
+
+---
+
 ## Overview
 
 This log documents how AI assistance was used throughout the development of the Todo application using the BMAD Method. All implementation was driven by AI agents operating within the BMAD workflow (PM → Architect → Story Creation → Dev → Code Review → Fix cycle).

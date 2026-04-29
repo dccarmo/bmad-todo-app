@@ -184,3 +184,5 @@ This application was built entirely through the BMAD agent workflow:
 7. Fix agents addressed 40+ review findings across architecture, correctness, testing, a11y, and security
 
 See [AI Integration Log](docs/ai-integration-log.md) for full documentation of agent usage, prompts, limitations, and outcomes.
+
+All BMAD spec artifacts (PRD, architecture, epics, stories, sprint status) are in [`_bmad-output/`](_bmad-output/).
