@@ -37,7 +37,7 @@ describe('useToggleTodo', () => {
     let resolveMutation!: (v: unknown) => void
     mockToggleTodo.mockReturnValue(
       new Promise((res) => {
-        resolveMutation = res
+        resolveMutation = res as unknown as (v: unknown) => void
       })
     )
 

@@ -28,7 +28,7 @@ function TodoPageInner() {
           ) : isError && todos.length === 0 ? (
             <ErrorState
               message={error instanceof Error ? error.message : 'Failed to load todos'}
-              onRetry={refetch}
+              onRetry={() => { void refetch() }}
             />
           ) : (
             <>
@@ -40,7 +40,7 @@ function TodoPageInner() {
                 >
                   Showing cached data — refresh failed.{' '}
                   <button
-                    onClick={refetch}
+                    onClick={() => { void refetch() }}
                     className="underline hover:no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                   >
                     Retry

@@ -25,17 +25,18 @@ RUN npm run build --workspace=apps/backend
 FROM node:20-alpine AS runtime
 WORKDIR /app
 
-# Copy package manifests for production install
-COPY package.json package-lock.json ./
-COPY packages/shared/package.json ./packages/shared/
-COPY apps/backend/package.json ./apps/backend/
-
-# Install production deps only (drizzle-kit is in dependencies, so it is included)
-RUN npm ci --omit=dev
+# Copy node_modules from builder (workspace hoisting already resolved correctly)
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/apps/backend/node_modules ./apps/backend/node_modules
 
 # Copy compiled artifacts from builder
 COPY --from=builder /app/apps/backend/dist ./apps/backend/dist
 COPY --from=builder /app/packages/shared/dist ./packages/shared/dist
+
+# Copy package manifests (needed by Node workspace resolution at runtime)
+COPY package.json ./
+COPY packages/shared/package.json ./packages/shared/
+COPY apps/backend/package.json ./apps/backend/
 
 # Copy runtime files needed by start.sh
 COPY apps/backend/start.sh ./apps/backend/start.sh
